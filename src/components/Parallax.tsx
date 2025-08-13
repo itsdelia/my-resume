@@ -1,62 +1,76 @@
-"use client"
+"use client";
 
 import {
-    motion,
-    MotionValue,
-    useScroll,
-    useSpring,
-    useTransform,
-} from "motion/react"
-import { useRef } from "react"
+  motion,
+  MotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "motion/react";
+import { useRef } from "react";
+
+const MENU = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+  { id: "projects", label: "Projects" },
+];
 
 function useParallax(value: MotionValue<number>, distance: number) {
-    return useTransform(value, [0, 1], [-distance, distance])
+  return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-function Image({ id }: { id: number }) {
-    const ref = useRef(null)
-    const { scrollYProgress } = useScroll({ target: ref })
-    const y = useParallax(scrollYProgress, 300)
+function Image({ id }: { id: string }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
 
-    return (
-        <section className="img-container">
-            <div ref={ref}>
-                <img
-                    src={'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?_gl=1*h1dqxo*_ga*MTU2MDA4Mzc3LjE3NTQ3MTY0NTc.*_ga_8JE65Q40S6*czE3NTQ3MTY0NTYkbzEkZzEkdDE3NTQ3MTY0NjUkajUxJGwwJGgw'}
-                    alt="A London skyscraper"
-                />
-            </div>
-            <motion.h2
-                // Hide until scroll progress is measured
-                initial={{ visibility: "hidden" }}
-                animate={{ visibility: "visible" }}
-                style={{ y }}
-            >{`#00${id}`}</motion.h2>
-        </section>
-    )
+  return (
+    <section className="img-container">
+      <div ref={ref}>
+        <img
+          src={
+            "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?_gl=1*h1dqxo*_ga*MTU2MDA4Mzc3LjE3NTQ3MTY0NTc.*_ga_8JE65Q40S6*czE3NTQ3MTY0NTYkbzEkZzEkdDE3NTQ3MTY0NjUkajUxJGwwJGgw"
+          }
+          alt="A London skyscraper"
+        />
+      </div>
+      <motion.h2
+        // Hide until scroll progress is measured
+        initial={{ visibility: "hidden" }}
+        animate={{ visibility: "visible" }}
+        style={{ y }}
+      >{`#${id}`}</motion.h2>
+    </section>
+  );
 }
 
 export default function Parallax() {
-    const { scrollYProgress } = useScroll()
-    const scaleX = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
-    })
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  // const setProgress = useAppStore((state) => state.setProgress)
 
-    return (
-        <div id="example">
-            {[1, 2, 3, 4, 5].map((image) => (
-                <Image key={image} id={image} />
-            ))}
-            <motion.div className="progress" style={{ scaleX }} />
-            <StyleSheet />
-        </div>
-    )
+  // useEffect(() => {
+  //   setProgress(scrollYProgress.get)
+  // }, [scrollYProgress, setProgress])
+
+  return (
+    <div id="example">
+      {MENU.map((image) => (
+        <Image key={image.id} id={image.id} />
+      ))}
+      <motion.div className="progress" style={{ scaleX }} />
+      <StyleSheet />
+    </div>
+  );
 }
 function StyleSheet() {
-    return (
-        <style>{`
+  return (
+    <style>{`
         html {
             scroll-snap-type: y mandatory;
         }
@@ -120,5 +134,5 @@ function StyleSheet() {
             transform: scaleX(0);
         }
     `}</style>
-    )
+  );
 }
