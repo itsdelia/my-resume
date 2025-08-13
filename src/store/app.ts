@@ -1,12 +1,11 @@
 import { create } from 'zustand'
 
 interface AppState {
-  progress: number
-  setProgress: (by: number) => void
+  activeView: string;
+  setActiveView: (view: string) => void;
 }
 
-
 export const useAppStore = create<AppState>((set) => ({
-  progress: 0,
-  setProgress: (by) => set(() => ({ progress: by })),
+  activeView: 'home',
+  setActiveView: (view) => set(() => ({ activeView: view })),
 }))

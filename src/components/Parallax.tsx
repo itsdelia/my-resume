@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   motion,
@@ -6,52 +6,62 @@ import {
   useScroll,
   useSpring,
   useTransform,
-} from "motion/react";
-import { useRef } from "react";
+} from 'motion/react'
+import { useRef } from 'react'
+import { useAppStore } from '../store/app'
 
 const MENU = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
-  { id: "projects", label: "Projects" },
-];
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'contact', label: 'Contact' },
+  { id: 'projects', label: 'Projects' },
+]
 
 function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
+  return useTransform(value, [0, 1], [-distance, distance])
 }
 
 function Image({ id }: { id: string }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 300);
+  const ref = useRef(null)
+  const setActiveView = useAppStore((state) => state.setActiveView)
+  const { scrollYProgress } = useScroll({ target: ref })
+  const y = useParallax(scrollYProgress, 300)
 
   return (
-    <section className="img-container">
+    <motion.section
+      className="img-container"
+      onViewportEnter={() => setActiveView(id)}
+      viewport={{
+        margin: '0px 0px 0px 0px',
+        amount: 'all',
+      }}
+      id={id}
+    >
       <div ref={ref}>
         <img
           src={
-            "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?_gl=1*h1dqxo*_ga*MTU2MDA4Mzc3LjE3NTQ3MTY0NTc.*_ga_8JE65Q40S6*czE3NTQ3MTY0NTYkbzEkZzEkdDE3NTQ3MTY0NjUkajUxJGwwJGgw"
+            'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?_gl=1*h1dqxo*_ga*MTU2MDA4Mzc3LjE3NTQ3MTY0NTc.*_ga_8JE65Q40S6*czE3NTQ3MTY0NTYkbzEkZzEkdDE3NTQ3MTY0NjUkajUxJGwwJGgw'
           }
           alt="A London skyscraper"
         />
       </div>
       <motion.h2
         // Hide until scroll progress is measured
-        initial={{ visibility: "hidden" }}
-        animate={{ visibility: "visible" }}
+        initial={{ visibility: 'hidden' }}
+        animate={{ visibility: 'visible' }}
         style={{ y }}
       >{`#${id}`}</motion.h2>
-    </section>
-  );
+    </motion.section>
+  )
 }
 
 export default function Parallax() {
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
-  });
+  })
   // const setProgress = useAppStore((state) => state.setProgress)
 
   // useEffect(() => {
@@ -66,7 +76,7 @@ export default function Parallax() {
       <motion.div className="progress" style={{ scaleX }} />
       <StyleSheet />
     </div>
-  );
+  )
 }
 function StyleSheet() {
   return (
@@ -134,5 +144,5 @@ function StyleSheet() {
             transform: scaleX(0);
         }
     `}</style>
-  );
+  )
 }

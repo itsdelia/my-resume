@@ -1,7 +1,7 @@
-import "./App.css";
-import { Layout } from "./components/Layout";
-import { Navigation } from "./components/Navigation";
-import Parallax from "./components/Parallax";
+import './App.css'
+import { Layout } from './components/Layout'
+import { Navigation } from './components/Navigation'
+import Parallax from './components/Parallax'
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
       <Parallax />
       <Navigation />
     </Layout>
-  );
+  )
 }
 
-export default App;
+export default App
