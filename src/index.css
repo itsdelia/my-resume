@@ -4,3 +4,44 @@ body {
   padding: 0;
   margin: 0;
 }
+
+@theme {
+  /* shorthand variable for the gradient animation */
+  --animate-sheen-move: sheen-move 5s linear infinite;
+
+  /* keyframes: move the background-position top -> bottom -> top */
+  @keyframes sheen-move {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+}
+
+.animated-line {
+  border-radius: 999px; /* pill shape */
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.14) 20%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.14) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 100% 300%; /* taller than element so it can sweep */
+  background-repeat: no-repeat;
+  animation: var(--animate-sheen-move);
+  mix-blend-mode: screen; /* makes the white pop on dark backgrounds */
+  will-change: background-position, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-line {
+    animation: none !important;
+  }
+}

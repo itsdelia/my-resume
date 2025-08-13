@@ -11,7 +11,7 @@ const MENU = [
 export const Navigation = () => {
   return (
     <nav className="fixed bottom-5 right-5 p-6 text-sm">
-      <div className="h-24 w-0.5 bg-slate-800 absolute left-1 top-8" />
+      <div className="h-24 w-0.5 bg-slate-800 absolute left-1 top-8 animated-line" />
       <ul className="text-left text-xs uppercase">
         {MENU.map((item) => (
           <Item label={item.label} key={item.id} />
