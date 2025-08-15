@@ -1,4 +1,3 @@
-import { menu } from "framer-motion/client";
 import { t, type Dictionary } from "intlayer";
 import type { ReactNode } from "react";
 
