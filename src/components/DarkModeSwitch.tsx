@@ -5,7 +5,7 @@ export const DarkModeSwitch = () => {
   return (
     <label
       htmlFor="checkbox"
-      className="fixed right-0 top-8 z-50 flex items-center justify-center w-40 h-9 scale-60"
+      className="w-30 scale-40"
     >
       <input
         type="checkbox"

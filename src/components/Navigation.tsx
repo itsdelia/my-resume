@@ -2,17 +2,19 @@ import { motion } from 'motion/react'
 import { useState } from 'react'
 import { useAppStore } from '../store/app'
 import clsx from 'clsx'
+import { useIntlayer } from 'react-intlayer'
 
 const MENU = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'contact', label: 'Contact' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'home', label: 'home' },
+  { id: 'about', label: 'about' },
+  { id: 'contact', label: 'contact' },
+  { id: 'projects', label: 'projects' },
 ]
 
 export const Navigation = () => {
   const activeView = useAppStore((state) => state.activeView)
   const activeIndex = MENU.findIndex((item) => item.id === activeView)
+  const content = useIntlayer("app");
 
   return (
     <nav className="fixed bottom-5 right-5 p-6 text-sm">
@@ -27,7 +29,7 @@ export const Navigation = () => {
       <ul className="text-left text-xs uppercase">
         {MENU.map((item) => (
           <Item
-            label={item.label}
+            label={content[item.label]}
             key={item.id}
             id={item.id}
             isActive={item.id === activeView}
