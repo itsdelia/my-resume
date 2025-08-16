@@ -8,7 +8,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="px-6 h-dvh flex flex-col py-4 text-center">
       <header className="header">
-        <div className="fixed left-0 top-0 flex items-center gap-2 p-4">
+        <div className="fixed left-0 top-0 flex items-center gap-2 p-4 z-50">
           <img
             src={theme === "dark" ? "../dm-white.png" : "../2.png"}
             alt="Logo"

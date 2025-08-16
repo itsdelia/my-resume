@@ -23,6 +23,9 @@ importers:
       motion:
         specifier: ^12.23.12
         version: 12.23.12(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      ogl:
+        specifier: ^1.0.11
+        version: 1.0.11
       react:
         specifier: ^19.1.1
         version: 19.1.1
@@ -31,7 +34,7 @@ importers:
         version: 19.1.1(react@19.1.1)
       react-intlayer:
         specifier: ^5.7.8
-        version: 5.7.8(@intlayer/api@5.7.8(@intlayer/config@5.7.8))(@intlayer/config@5.7.8(intlayer@5.7.8))(@intlayer/core@5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8))(@intlayer/dictionaries-entry@5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8)))(@intlayer/editor-react@5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(@intlayer/core@5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 5.7.8(@intlayer/api@5.7.8(@intlayer/config@5.7.8))(@intlayer/config@5.7.8(intlayer@5.7.8))(@intlayer/core@5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8))(@intlayer/dictionaries-entry@5.7.8(@intlayer/config@5.7.8)(intlayer@5.7.8))(@intlayer/editor-react@5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(@intlayer/core@5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
@@ -1475,6 +1478,9 @@ packages:
     resolution: {integrity: sha512-nK28WOo+QIjBkDduTINE4JkF/UJJKyf2EJxvJKfblDpyg0Q+pkOHNTL0Qwy6NP6FhE/EnzV73BxxqcJaXY9anw==}
     engines: {node: '>= 0.4'}
 
+  ogl@1.0.11:
+    resolution: {integrity: sha512-kUpC154AFfxi16pmZUK4jk3J+8zxwTWGPo03EoYA8QPbzikHoaC82n6pNTbd+oEaJonaE8aPWBlX7ad9zrqLsA==}
+
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
@@ -2083,7 +2089,7 @@ snapshots:
       '@intlayer/api': 5.7.8(@intlayer/config@5.7.8)
       '@intlayer/config': 5.7.8(intlayer@5.7.8)
       '@intlayer/core': 5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8)
-      '@intlayer/dictionaries-entry': 5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))
+      '@intlayer/dictionaries-entry': 5.7.8(@intlayer/config@5.7.8)(intlayer@5.7.8)
       '@intlayer/unmerged-dictionaries-entry': 5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))
       chokidar: 3.6.0
       crypto-js: 4.2.0
@@ -2102,7 +2108,7 @@ snapshots:
       '@intlayer/api': 5.7.8(@intlayer/config@5.7.8)
       '@intlayer/chokidar': 5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8)(fast-glob@3.3.3)(intlayer@5.7.8)(react@19.1.1)
       '@intlayer/config': 5.7.8(intlayer@5.7.8)
-      '@intlayer/dictionaries-entry': 5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))
+      '@intlayer/dictionaries-entry': 5.7.8(@intlayer/config@5.7.8)(intlayer@5.7.8)
       '@intlayer/unmerged-dictionaries-entry': 5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))
       commander: 13.1.0
       fast-glob: 3.3.3
@@ -2121,11 +2127,11 @@ snapshots:
     dependencies:
       '@intlayer/api': 5.7.8(@intlayer/config@5.7.8)
       '@intlayer/config': 5.7.8(intlayer@5.7.8)
-      '@intlayer/dictionaries-entry': 5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))
+      '@intlayer/dictionaries-entry': 5.7.8(@intlayer/config@5.7.8)(intlayer@5.7.8)
       intlayer: 5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8)
       negotiator: 1.0.0
 
-  '@intlayer/dictionaries-entry@5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))':
+  '@intlayer/dictionaries-entry@5.7.8(@intlayer/config@5.7.8)(intlayer@5.7.8)':
     dependencies:
       '@intlayer/config': 5.7.8(intlayer@5.7.8)
       intlayer: 5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8)
@@ -3147,6 +3153,8 @@ snapshots:
       has-symbols: 1.1.0
       object-keys: 1.1.1
 
+  ogl@1.0.11: {}
+
   optionator@0.9.4:
     dependencies:
       deep-is: 0.1.4
@@ -3197,12 +3205,12 @@ snapshots:
       react: 19.1.1
       scheduler: 0.26.0
 
-  react-intlayer@5.7.8(@intlayer/api@5.7.8(@intlayer/config@5.7.8))(@intlayer/config@5.7.8(intlayer@5.7.8))(@intlayer/core@5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8))(@intlayer/dictionaries-entry@5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8)))(@intlayer/editor-react@5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(@intlayer/core@5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-intlayer@5.7.8(@intlayer/api@5.7.8(@intlayer/config@5.7.8))(@intlayer/config@5.7.8(intlayer@5.7.8))(@intlayer/core@5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8))(@intlayer/dictionaries-entry@5.7.8(@intlayer/config@5.7.8)(intlayer@5.7.8))(@intlayer/editor-react@5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(@intlayer/core@5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       '@intlayer/api': 5.7.8(@intlayer/config@5.7.8)
       '@intlayer/config': 5.7.8(intlayer@5.7.8)
       '@intlayer/core': 5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8)
-      '@intlayer/dictionaries-entry': 5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(intlayer@5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8))
+      '@intlayer/dictionaries-entry': 5.7.8(@intlayer/config@5.7.8)(intlayer@5.7.8)
       '@intlayer/editor-react': 5.7.8(@intlayer/config@5.7.8(intlayer@5.7.8))(@intlayer/core@5.7.8(@intlayer/api@5.7.8)(@intlayer/config@5.7.8)(@intlayer/dictionaries-entry@5.7.8)(intlayer@5.7.8))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       intlayer: 5.7.8(@intlayer/cli@5.7.8)(@intlayer/config@5.7.8)(@intlayer/core@5.7.8)
       js-cookie: 3.0.5

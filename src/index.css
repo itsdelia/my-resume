@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 body {
   padding: 0;
   margin: 0;
