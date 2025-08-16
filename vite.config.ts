@@ -7,5 +7,5 @@ import pkg from "./package.json";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), intlayerPlugin()],
-  base: `/${pkg.name}/`,
+  base: process.env.NODE_ENV === "development" ? "/" : `/${pkg.name}/`,
 });

@@ -10,7 +10,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
       <header className="header">
         <div className="fixed left-0 top-0 flex items-center gap-2 p-4">
           <img
-            src={theme === "dark" ? "/dm-white.png" : "/2.png"}
+            src={theme === "dark" ? "../dm-white.png" : "../2.png"}
             alt="Logo"
             className="h-auto w-32"
           />
