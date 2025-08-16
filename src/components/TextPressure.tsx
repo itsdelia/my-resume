@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const TextPressure = ({
-  text = 'Compressa',
-  fontFamily = 'Compressa VF',
+  text = "Compressa",
+  fontFamily = "Compressa VF",
   // This font is just an example, you should not use it in commercial projects.
-  fontUrl = 'https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2',
+  fontUrl = "https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2",
 
   width = true,
   weight = true,
@@ -15,17 +15,16 @@ const TextPressure = ({
   stroke = false,
   scale = false,
 
-  textColor = '#FFFFFF',
-  strokeColor = '#FF0000',
+  textColor = "#FFFFFF",
+  strokeColor = "#FF0000",
   strokeWidth = 2,
-  className = '',
+  className = "",
 
   minFontSize = 24,
-
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
-  const spansRef = useRef<HTMLSpanElement[]>([]);
+  const spansRef = useRef<Array<HTMLSpanElement | null>>([]);
 
   const mouseRef = useRef({ x: 0, y: 0 });
   const cursorRef = useRef({ x: 0, y: 0 });
@@ -34,30 +33,33 @@ const TextPressure = ({
   const [scaleY, setScaleY] = useState(1);
   const [lineHeight, setLineHeight] = useState(1);
 
-  const chars = text.split('');
+  const chars = text.split("");
 
-  const dist = (a, b) => {
+  const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
     const dx = b.x - a.x;
     const dy = b.y - a.y;
     return Math.sqrt(dx * dx + dy * dy);
   };
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       cursorRef.current.x = e.clientX;
       cursorRef.current.y = e.clientY;
     };
-    const handleTouchMove = (e) => {
+    const handleTouchMove = (e: TouchEvent) => {
       const t = e.touches[0];
       cursorRef.current.x = t.clientX;
       cursorRef.current.y = t.clientY;
     };
 
-    containerRef.current?.addEventListener('mousemove', handleMouseMove);
-    containerRef.current?.addEventListener('touchmove', handleTouchMove, { passive: false });
+    containerRef.current?.addEventListener("mousemove", handleMouseMove);
+    containerRef.current?.addEventListener("touchmove", handleTouchMove, {
+      passive: false,
+    });
 
     if (containerRef.current) {
-      const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+      const { left, top, width, height } =
+        containerRef.current.getBoundingClientRect();
       mouseRef.current.x = left + width / 2;
       mouseRef.current.y = top + height / 2;
       cursorRef.current.x = mouseRef.current.x;
@@ -65,15 +67,16 @@ const TextPressure = ({
     }
 
     return () => {
-      containerRef.current?.removeEventListener('mousemove', handleMouseMove);
-      containerRef.current?.removeEventListener('touchmove', handleTouchMove);
+      containerRef.current?.removeEventListener("mousemove", handleMouseMove);
+      containerRef.current?.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
   const setSize = () => {
     if (!containerRef.current || !titleRef.current) return;
 
-    const { width: containerW, height: containerH } = containerRef.current.getBoundingClientRect();
+    const { width: containerW, height: containerH } =
+      containerRef.current.getBoundingClientRect();
 
     let newFontSize = containerW / (chars.length / 2);
     newFontSize = Math.max(newFontSize, minFontSize);
@@ -96,8 +99,8 @@ const TextPressure = ({
 
   useEffect(() => {
     setSize();
-    window.addEventListener('resize', setSize);
-    return () => window.removeEventListener('resize', setSize);
+    window.addEventListener("resize", setSize);
+    return () => window.removeEventListener("resize", setSize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scale, text]);
 
@@ -122,7 +125,11 @@ const TextPressure = ({
 
           const d = dist(mouseRef.current, charCenter);
 
-          const getAttr = (distance: number, minVal: number, maxVal: number) => {
+          const getAttr = (
+            distance: number,
+            minVal: number,
+            maxVal: number
+          ) => {
             const val = maxVal - Math.abs((maxVal * distance) / maxDist);
             return Math.max(minVal, val + minVal);
           };
@@ -173,14 +180,15 @@ const TextPressure = ({
 
       <h1
         ref={titleRef}
-        className={`text-pressure-title ${className} ${flex ? 'flex justify-between' : ''
-          } ${stroke ? 'stroke' : ''} uppercase text-center`}
+        className={`text-pressure-title ${className} ${
+          flex ? "flex justify-between" : ""
+        } ${stroke ? "stroke" : ""} uppercase text-center`}
         style={{
           fontFamily,
           fontSize: fontSize,
           lineHeight,
           transform: `scale(1, ${scaleY})`,
-          transformOrigin: 'center top',
+          transformOrigin: "center top",
           margin: 0,
           fontWeight: 100,
           color: stroke ? undefined : textColor,
@@ -189,7 +197,9 @@ const TextPressure = ({
         {chars.map((char, i) => (
           <span
             key={i}
-            ref={(el) => (spansRef.current[i] = el)}
+            ref={(el) => {
+              spansRef.current[i] = el;
+            }}
             data-char={char}
             className="inline-block"
           >
