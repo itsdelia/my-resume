@@ -24,14 +24,8 @@ export const LandingPage = () => {
           className="-ml-48 text-2xl md:text-5xl font-extrabold tracking-tight text-black mt-10 dark:text-white"
         /> */}
         <TextPressure
-          text="Trading in business"
+          text="Trading in business Thriving in art"
           textColor={theme === "dark" ? "#ffffff" : "#000000"}
-        />
-        <span></span>
-        <TextPressure
-          text="Thriving in art"
-          textColor={theme === "dark" ? "#ffffff" : "#000000"}
-          minFontSize={30}
         />
       </div>
     </div>

@@ -52,8 +52,8 @@ const TextPressure = ({
       cursorRef.current.y = t.clientY;
     };
 
-    containerRef.current?.addEventListener("mousemove", handleMouseMove);
-    containerRef.current?.addEventListener("touchmove", handleTouchMove, {
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove, {
       passive: false,
     });
 
@@ -67,8 +67,8 @@ const TextPressure = ({
     }
 
     return () => {
-      containerRef.current?.removeEventListener("mousemove", handleMouseMove);
-      containerRef.current?.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
