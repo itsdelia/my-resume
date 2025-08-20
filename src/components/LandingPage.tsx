@@ -36,7 +36,7 @@ export const LandingPage = () => {
           <SplitText
             text={content.slogan.value}
             className={clsx(
-              "text-2xl md:text-4xl tracking-tight text-black mt-10 dark:text-white",
+              "text-2xl md:text-4xl tracking-tight text-black dark:text-white",
               locale === Locales.CHINESE_SIMPLIFIED ? "font-guofeng md:text-6xl" : 'font-andong md:text-6xl'
             )}
           />
