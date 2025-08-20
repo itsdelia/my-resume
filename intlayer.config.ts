@@ -1,4 +1,4 @@
-import { Locales, type IntlayerConfig } from "intlayer";
+import { Locales, type IntlayerConfig } from 'intlayer'
 
 const config: IntlayerConfig = {
   internationalization: {
@@ -9,6 +9,6 @@ const config: IntlayerConfig = {
     ],
     defaultLocale: Locales.ENGLISH,
   },
-};
+}
 
-export default config;
+export default config

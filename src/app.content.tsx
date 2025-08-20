@@ -1,29 +1,29 @@
-import { t, type Dictionary } from "intlayer";
-import type { ReactNode } from "react";
+import { t, type Dictionary } from 'intlayer'
+import type { ReactNode } from 'react'
 
 const appContent = {
-  key: "app",
+  key: 'app',
   content: {
     viteLogo: t({
-      "en-GB": "Vite logo",
-      en: "Vite logo",
-      fr: "Logo Vite",
-      es: "Logo Vite",
+      'en-GB': 'Vite logo',
+      en: 'Vite logo',
+      fr: 'Logo Vite',
+      es: 'Logo Vite',
     }),
     reactLogo: t({
-      "en-GB": "React logo",
-      en: "React logo",
-      fr: "Logo React",
-      es: "Logo React",
+      'en-GB': 'React logo',
+      en: 'React logo',
+      fr: 'Logo React',
+      es: 'Logo React',
     }),
 
-    title: "Vite + React",
+    title: 'Vite + React',
 
     count: t({
-      "en-GB": "count is ",
-      en: "count is ",
-      fr: "le compte est ",
-      es: "el recuento es ",
+      'en-GB': 'count is ',
+      en: 'count is ',
+      fr: 'le compte est ',
+      es: 'el recuento es ',
     }),
 
     edit: t<ReactNode>({
@@ -45,32 +45,37 @@ const appContent = {
     }),
 
     readTheDocs: t({
-      en: "Click on the Vite and React logos to learn more",
-      zh: "点击 Vite 和 React 徽标以了解更多信息",
-      kr: "Vite 및 React 로고를 클릭하여 자세히 알아보세요",
+      en: 'Click on the Vite and React logos to learn more',
+      zh: '点击 Vite 和 React 徽标以了解更多信息',
+      kr: 'Vite 및 React 로고를 클릭하여 자세히 알아보세요',
     }),
 
     home: t({
-      en: "Home",
-      'zh-Hans': "首页",
-      'ko-KR': "홈",
+      en: 'Home',
+      'zh-Hans': '首页',
+      'ko-KR': '홈',
     }),
     about: t({
-      en: "About",
-      'zh-Hans': "关于",
-      'ko-KR': "정보",
+      en: 'About',
+      'zh-Hans': '关于',
+      'ko-KR': '정보',
     }),
     contact: t({
-      en: "Contact",
-      'zh-Hans': "联系",
-      'ko-KR': "연락처",
+      en: 'Contact',
+      'zh-Hans': '联系',
+      'ko-KR': '연락처',
     }),
     projects: t({
-      en: "Projects",
-      'zh-Hans': "项目",
-      'ko-KR': "프로젝트",
+      en: 'Projects',
+      'zh-Hans': '项目',
+      'ko-KR': '프로젝트',
+    }),
+    slogan: t({
+      en: 'Trading in business, thriving in art',
+      'zh-Hans': '钱赚起来，艺飞起来',
+      'ko-KR': '돈은 올리고, 예술은 날리기!',
     }),
   },
-} satisfies Dictionary;
+} satisfies Dictionary
 
-export default appContent;
+export default appContent

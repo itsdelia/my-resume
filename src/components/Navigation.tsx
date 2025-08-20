@@ -14,7 +14,7 @@ const MENU = [
 export const Navigation = () => {
   const activeView = useAppStore((state) => state.activeView)
   const activeIndex = MENU.findIndex((item) => item.id === activeView)
-  const content = useIntlayer("app");
+  const content = useIntlayer('app')
 
   return (
     <nav className="fixed bottom-5 right-5 p-6 text-sm">
