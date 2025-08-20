@@ -2,6 +2,20 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: 'GuoFeng';
+  src: url('/GuoFengMaChaoGangBiShouXieTi-2.ttf') format('truetype');
+  font-weight: 400; /* Adjust if needed */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Andong';
+  src: url('/andong.ttf') format('truetype');
+  font-weight: 400; /* Adjust if needed */
+  font-style: normal;
+}
+
 html {
   scroll-snap-type: y mandatory;
 }
@@ -12,6 +26,8 @@ body {
 }
 
 @theme {
+  --font-guofeng: 'GuoFeng', sans-serif;
+  --font-andong: 'Andong', sans-serif;
   /* shorthand variable for the gradient animation */
   --animate-sheen-move: sheen-move 5s linear infinite;
 
