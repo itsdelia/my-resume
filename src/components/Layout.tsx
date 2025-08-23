@@ -3,12 +3,13 @@ import { DarkModeSwitch } from './DarkModeSwitch'
 import { useTheme } from '../context/theme'
 import { LanguageToggle } from './LanguageToggle'
 
+const date = new Date().getFullYear()
 export const Layout = ({ children }: { children: ReactNode }) => {
   const { theme } = useTheme()
   return (
     <div className="px-6 h-dvh flex flex-col py-4 text-center">
       <header className="header">
-        <div className="fixed left-0 top-0 flex items-center gap-2 p-4 z-50">
+        <div className="fixed left-0 top-0 flex items-center gap-2 p-2 md:p-4 z-50">
           <img
             src={theme === 'dark' ? './dm-white.png' : './2.png'}
             alt="Logo"
@@ -23,7 +24,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
       </header>
       <main className="flex-1 mt-20">{children}</main>
       <footer className="footer">
-        <p>© 2023 Delia's resume</p>
+        <p>©{date} Delia Ma</p>
       </footer>
     </div>
   )
