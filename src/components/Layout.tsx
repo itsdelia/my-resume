@@ -7,7 +7,7 @@ const date = new Date().getFullYear()
 export const Layout = ({ children }: { children: ReactNode }) => {
   const { theme } = useTheme()
   return (
-    <div className="px-6 h-dvh flex flex-col py-4 text-center">
+    <div className="px-2 md:px-6 h-dvh flex flex-col py-4 items-center w-full">
       <header className="header">
         <div className="fixed left-0 top-0 flex items-center gap-2 p-2 md:p-4 z-50">
           <img
@@ -17,7 +17,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
           />
           <span className="sr-only">Delia's resume</span>
         </div>
-        <div className="fixed right-0 top-8 z-50 flex items-center gap-2 px-10 h-9">
+        <div className="fixed right-0 top-6 md:top-8 z-50 items-center gap-2 px-4 h-9 flex md:px-10">
           <DarkModeSwitch />
           <LanguageToggle />
         </div>
