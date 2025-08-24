@@ -43,6 +43,20 @@ body {
       background-position: 0% 0%;
     }
   }
+
+  --animate-sheen-hr-move: sheen-hr-move 10s linear infinite;
+
+  @keyframes sheen-hr-move {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
 }
 
 .animated-line {
@@ -58,6 +72,40 @@ body {
   background-size: 100% 300%; /* taller than element so it can sweep */
   background-repeat: no-repeat;
   animation: var(--animate-sheen-move);
+  mix-blend-mode: screen; /* makes the white pop on dark backgrounds */
+  will-change: background-position, opacity;
+}
+
+.animated-dark-progress {
+  border-radius: 999px; /* pill shape */
+  background-image: linear-gradient(
+    90deg,
+    rgba(238, 249, 255, 0.85) 0%,
+    rgba(112, 207, 255, 0.85) 20%,
+    rgba(51, 109, 176, 0.95) 50%,
+    rgba(112, 207, 255, 0.85) 80%,
+    rgba(238, 249, 255, 0.85) 100%
+  );
+  background-size: 300% 100%; /* taller than element so it can sweep */
+  background-repeat: no-repeat;
+  animation: var(--animate-sheen-hr-move);
+  mix-blend-mode: screen; /* makes the white pop on dark backgrounds */
+  will-change: background-position, opacity;
+}
+
+.animated-light-progress {
+  border-radius: 999px; /* pill shape */
+  background-image: linear-gradient(
+    90deg,
+    rgba(238, 249, 255, 0.85) 0%,
+    rgba(255, 240, 107, 0.85) 20%,
+    rgba(239, 194, 48, 0.95) 50%,
+    rgba(255, 240, 107, 0.85) 80%,
+    rgba(238, 249, 255, 0.85) 100%
+  );
+  background-size: 300% 100%; /* taller than element so it can sweep */
+  background-repeat: no-repeat;
+  animation: var(--animate-sheen-hr-move);
   mix-blend-mode: screen; /* makes the white pop on dark backgrounds */
   will-change: background-position, opacity;
 }

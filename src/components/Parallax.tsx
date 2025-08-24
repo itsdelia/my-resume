@@ -11,6 +11,8 @@ import { useRef } from 'react'
 import { useAppStore } from '../store/app'
 import { LandingPage } from './LandingPage'
 import { ParallaxSection } from './ParallaxSection'
+import { useTheme } from '../context/theme'
+import clsx from 'clsx'
 
 const MENU = [
   { id: 'about', label: 'About' },
@@ -38,7 +40,7 @@ function Image({ id }: { id: string }) {
       viewport={{
         margin: '0px 0px 0px 0px',
         amount: 'all',
-        once: true
+        once: true,
       }}
       id={id}
     >
@@ -61,12 +63,14 @@ function Image({ id }: { id: string }) {
 }
 
 export default function Parallax() {
+  const { theme } = useTheme()
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   })
+  console.log(scaleX)
   // const setProgress = useAppStore((state) => state.setProgress)
 
   // useEffect(() => {
@@ -81,7 +85,10 @@ export default function Parallax() {
       {MENU.map((image) => (
         <Image key={image.id} id={image.id} />
       ))}
-      <motion.div className="progress" style={{ scaleX }} />
+      <motion.div
+        className={clsx('fixed left-0 right-0 h-2 bottom-0 sm:bottom-5 progress', theme === 'dark' ? 'animated-dark-progress' : 'animated-light-progress')}
+        style={{ scaleX }}
+      />
       <StyleSheet />
     </div>
   )
@@ -144,12 +151,6 @@ function StyleSheet() {
         }
 
         .progress {
-            position: fixed;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: #8dbbf0ff;
-            bottom: 50px;
             transform: scaleX(0);
         }
     `}</style>
