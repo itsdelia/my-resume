@@ -38,6 +38,7 @@ function Image({ id }: { id: string }) {
       viewport={{
         margin: '0px 0px 0px 0px',
         amount: 'all',
+        once: true
       }}
       id={id}
     >
