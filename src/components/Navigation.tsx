@@ -17,7 +17,7 @@ export const Navigation = () => {
   const content = useIntlayer('app')
 
   return (
-    <nav className="fixed bottom-5 right-5 p-6 text-sm">
+    <nav className="fixed bottom-5 right-5 p-6 text-sm hidden sm:block">
       <div className="h-24 w-0.5 bg-gray-800 absolute left-1 top-8 animated-line">
         <motion.div
           className="size-3 border border-gray-800 rounded-full origin-left absolute -left-[5px] dark:border-white"

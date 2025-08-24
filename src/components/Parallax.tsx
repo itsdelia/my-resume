@@ -31,7 +31,10 @@ function Image({ id }: { id: string }) {
   return (
     <motion.section
       className="img-container"
-      onViewportEnter={() => setActiveView(id)}
+      onViewportEnter={() => {
+        console.log('enter', id)
+        setActiveView(id)
+      }}
       viewport={{
         margin: '0px 0px 0px 0px',
         amount: 'all',
