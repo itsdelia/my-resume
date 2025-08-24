@@ -13,9 +13,10 @@ import { LandingPage } from './LandingPage'
 import { ParallaxSection } from './ParallaxSection'
 import { useTheme } from '../context/theme'
 import clsx from 'clsx'
+import { AboutPage } from './AboutPage'
 
 const MENU = [
-  { id: 'about', label: 'About' },
+  // { id: 'about', label: 'About' },
   { id: 'contact', label: 'Contact' },
   { id: 'projects', label: 'Projects' },
 ]
@@ -81,6 +82,9 @@ export default function Parallax() {
     <div>
       <ParallaxSection id="home">
         <LandingPage />
+      </ParallaxSection>
+      <ParallaxSection id="about">
+        <AboutPage />
       </ParallaxSection>
       {MENU.map((image) => (
         <Image key={image.id} id={image.id} />

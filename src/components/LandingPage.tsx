@@ -6,10 +6,6 @@ import { Locales } from 'intlayer'
 import SplitText from './SplitText'
 import clsx from 'clsx'
 
-/**
- * ScatterHoverText
- * Splits text into individual characters and scatters them upon hover with random offsets.
- */
 export const LandingPage = () => {
   const { theme } = useTheme()
   const { locale } = useLocale()

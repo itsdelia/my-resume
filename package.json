@@ -20,6 +20,7 @@
     "react-dom": "^19.1.1",
     "react-intlayer": "^5.7.8",
     "tailwindcss": "^4.1.11",
+    "vanilla-tilt": "^1.8.1",
     "zustand": "^5.0.7"
   },
   "devDependencies": {

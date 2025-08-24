@@ -1,0 +1,212 @@
+import clsx from "clsx";
+// import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
+import VanillaTilt from "vanilla-tilt";
+
+const options = {
+  max: 15,
+  speed: 200,
+  glare: true,
+  "max-glare": 1,
+};
+
+export const AboutPage = () => {
+  const tilt = useRef<HTMLDivElement>(null);
+  // const variants = {
+  //   initial: {
+  //     backgroundPosition: "0 50%",
+  //   },
+  //   animate: {
+  //     backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
+  //   },
+  // };
+  useEffect(() => {
+    if (tilt.current) VanillaTilt.init(tilt.current, options);
+  }, [options]);
+
+  return (
+    <div className="min-h-screen w-full p-8 gap-3 flex items-center justify-center relative p-[4px] group">
+      {/* <motion.div
+        variants={variants}
+        initial="initial"
+        animate="animate"
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        style={{
+          backgroundSize: "400% 400%",
+        }}
+        className={clsx(
+          "absolute inset-0 rounded-3xl z-[1] opacity-60 group-hover:opacity-100 blur-xl  transition duration-500 will-change-transform",
+          " bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
+        )}
+      />
+      <motion.div
+        variants={variants}
+        initial="initial"
+        animate="animate"
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        style={{
+          backgroundSize: "400% 400%",
+        }}
+        className={clsx(
+          "absolute inset-0 rounded-3xl z-[1] will-change-transform",
+          "bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
+        )}
+      /> */}
+      <div className={clsx("relative z-10 glassmorphic-card")} ref={tilt}>
+        <span>hi, im delia</span>
+      </div>
+      <StyleSheet />
+    </div>
+  );
+};
+function StyleSheet() {
+  return (
+    <style>{`
+.container-02 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 50%;
+  background: #161616;
+}
+.container-02 h2 {
+  position: relative;
+  width: 50%;
+  text-align: center;
+  z-index: 11;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  padding: 5px 8px;
+  font-size: 25px;
+  border-radius: 15px;
+  border-top: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+  border-left: 1px solid rgba(255,255,255,0.5); 
+  background: rgba(255,255,255,0.05);
+  
+}
+.container-02:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f00, #f0F);
+  clip-path: circle(30% at  88% 77%);
+}
+.container-02:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(20% at 15% 15%);
+}
+.glassmorphic-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+  width: 320px;
+  height: 500px;
+  padding: 40px 30px;
+  margin: 28px;
+  box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
+  border-radius: 15px;
+  border-top: 1px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+.container-02 .glassmorphic-card:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-size: 10em;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+.container-02 .glassmorphic-card .imgBox {
+  position: relative;
+  text-align: center;
+}
+.container-02 .glassmorphic-card .imgBox i {
+  font-size: max(80px);
+  color: rgba(255,255,255, 0.1);
+}
+.container-02 .glassmorphic-card .contentBox {
+  position: relative;
+  margin-top: 20px;
+  text-align:center;
+  transition: 0.5s;
+}
+.container-02 .glassmorphic-card .contentBox:before {
+  content: 'DIGITAL';
+    position: absolute;
+    top: -50px;
+    left: -125px;
+    width: 100%;
+    font-size: 4em;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transform: rotate(-90deg);
+    color: rgba(0,0,0,0.2);
+}
+.container-02 .glassmorphic-card .contentBox h3 {
+  font-size: 1.8em;
+  color: #fff;
+  z-index: 1;
+}
+.container-02 .glassmorphic-card .contentBox p {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+}
+.container-02 .glassmorphic-card .contentBox a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  margin-top: 15px;
+  background: #fff;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-left: 1px solid rgba(255,255,255,0.1);
+  color: #000;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.container-02 p {
+  z-index: 12;
+  margin: 20px auto 10px;
+  position: relative;
+  color: #fff;
+}
+.container-02 p span {
+  font-weight: 700;
+}
+    `}</style>
+  );
+}
