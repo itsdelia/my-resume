@@ -92,6 +92,7 @@ function StyleSheet() {
         .img-container {
             height: 100vh;
             width: 100%;
+            overflow: hidden;
             scroll-snap-align: start;
             display: flex;
             justify-content: center;

@@ -15,7 +15,7 @@ export const ParallaxSection = ({ id, children }: ImageProps) => {
 
   return (
     <motion.section
-      className="h-screen w-full snap-start flex justify-center items-center relative"
+      className="h-screen w-full overflow-x-hidden snap-start flex justify-center items-center relative"
       onViewportEnter={() => setActiveView(id)}
       viewport={{
         margin: '0px 0px 0px 0px',

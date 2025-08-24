@@ -17,7 +17,7 @@ export const LandingPage = () => {
 
   return (
     <div className="min-h-screen w-full relative p-8 gap-3 flex items-center justify-center">
-      <div className="size-[400px] md:size-[600px] w-full relative overflow-hidden">
+      <div className="size-[320px] md:size-[600px] w-full relative overflow-hidden">
         <Orb
           hoverIntensity={0.3}
           rotateOnHover={true}
