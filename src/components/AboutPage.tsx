@@ -1,6 +1,7 @@
 import clsx from "clsx";
 // import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
+import { useIntlayer } from "react-intlayer";
 import VanillaTilt from "vanilla-tilt";
 
 const options = {
@@ -11,6 +12,7 @@ const options = {
 };
 
 export const AboutPage = () => {
+  const content = useIntlayer('app')
   const tilt = useRef<HTMLDivElement>(null);
   // const variants = {
   //   initial: {
@@ -25,43 +27,9 @@ export const AboutPage = () => {
   }, [options]);
 
   return (
-    <div className="min-h-screen w-full p-8 gap-3 flex items-center justify-center relative p-[4px] group">
-      {/* <motion.div
-        variants={variants}
-        initial="initial"
-        animate="animate"
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        style={{
-          backgroundSize: "400% 400%",
-        }}
-        className={clsx(
-          "absolute inset-0 rounded-3xl z-[1] opacity-60 group-hover:opacity-100 blur-xl  transition duration-500 will-change-transform",
-          " bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
-        )}
-      />
-      <motion.div
-        variants={variants}
-        initial="initial"
-        animate="animate"
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        style={{
-          backgroundSize: "400% 400%",
-        }}
-        className={clsx(
-          "absolute inset-0 rounded-3xl z-[1] will-change-transform",
-          "bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
-        )}
-      /> */}
-      <div className={clsx("relative z-10 glassmorphic-card")} ref={tilt}>
-        <span>hi, im delia</span>
+    <div className="min-h-screen w-full gap-3 flex items-center justify-center relative p-[4px] group">
+      <div className={clsx("relative z-10 glassmorphic-card w-1/2 h-96 px-4 py-6")} ref={tilt}>
+        {content.introduction}
       </div>
       <StyleSheet />
     </div>
@@ -124,9 +92,7 @@ function StyleSheet() {
   align-items: center;
   flex-wrap: wrap;
   z-index: 1;
-  width: 320px;
-  height: 500px;
-  padding: 40px 30px;
+  // padding: 40px 30px;
   margin: 28px;
   box-shadow: 20px 20px 50px rgba(0,0,0, 0.5);
   border-radius: 15px;
@@ -157,7 +123,6 @@ function StyleSheet() {
 }
 .container-02 .glassmorphic-card .contentBox {
   position: relative;
-  margin-top: 20px;
   text-align:center;
   transition: 0.5s;
 }
