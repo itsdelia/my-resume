@@ -54,7 +54,7 @@ function Item({
       onHoverEnd={() => setIsHovered(false)}
     >
       {isActive && (
-        <div className="absolute size-2 motion-safe:animate-bounce bg-gray-800 opacity-50 rounded-full -top-1 left-1/2 transform -translate-x-1/2" />
+        <div className="absolute size-2 motion-safe:animate-bounce bg-[#f8c943] dark:bg-[#9ab8e2] opacity-50 rounded-full -top-1 left-1/2 transform -translate-x-1/2" />
       )}
       <div
         className="relative cursor-pointer overflow-hidden flex flex-col items-start gap-2 h-7"
